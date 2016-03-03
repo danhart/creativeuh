@@ -1,0 +1,18 @@
+<?php
+	$this->pageTitle = 'Young People';
+	$this->headTitle($this->pageTitle);
+?>
+
+<!-- Should use a partial for this article box so that it is reusable -->
+<?php foreach($this->courses as $course): ?>
+	<article class="article_box <?php echo $this->cycle(array('one', 'two', 'three', 'four'))->next() ?>">
+    	<header>
+        	<a href="<?php echo $this->url(array('controller'=>'course','action'=>'view','urlkey'=>$course->URLKey,'categorykey'=>$course->CategoryURLKey), 'young_course_view', TRUE) ?>"><?php echo $this->Image($course->URLKey, '/uploads/'. $course->Image, array('alt' => $this->escape($course->Title)), '200x200') ?></a>
+        	<h2><a href="<?php echo $this->url(array('controller'=>'course','action'=>'view','urlkey'=>$course->URLKey,'categorykey'=>$course->CategoryURLKey), 'young_course_view', TRUE) ?>"><?php echo $this->escape($course->Title) ?></a></h2>
+        </header>
+        <div class="article_content"><?php echo $this->escape($course->Subtitle) ?></div>
+        <footer>
+        	<a href="<?php echo $this->url(array('controller'=>'course','action'=>'view','urlkey'=>$course->URLKey,'categorykey'=>$course->CategoryURLKey), 'young_course_view', TRUE) ?>" class="more">more</a>
+        </footer>
+    </article>
+<?php endforeach; ?>

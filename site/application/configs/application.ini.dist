@@ -1,0 +1,60 @@
+[production]
+
+; Debug output
+phpSettings.display_startup_errors = 0
+phpSettings.display_errors = 0
+
+; Set Timezone
+phpSettings.date.timezone = "Europe/London"
+
+; Include path
+includePaths.library = APPLICATION_PATH "/../library"
+
+; Bootstrap
+bootstrap.path = APPLICATION_PATH "/Bootstrap.php"
+bootstrap.class = "Bootstrap"
+appnamespace = "Application"
+
+; Front Controller
+resources.frontController.controllerDirectory = APPLICATION_PATH "/controllers"
+resources.frontController.params.displayExceptions = 0
+
+; Session
+resources.session.name = "ZendSession"
+resources.session.save_path = APPLICATION_PATH "/../data/sessions"
+resources.session.remember_me_seconds = 86400
+
+; Autoload my Core library of classes
+autoloaderNamespaces[] = "Core_"
+
+; Layout
+resources.layout.layoutPath = APPLICATION_PATH "/layouts/scripts/"
+default.resources.layout.layout = "frontend"
+admin.resources.layout.layout = "admin"
+
+; Database
+resources.db.adapter = PDO_MYSQL
+resources.db.params.host = localhost
+resources.db.params.username = creativeadmin
+resources.db.params.password = Cr3at1veuh-
+resources.db.params.dbname = creative_innovation_training
+resources.db.params.charset = "utf8"
+resources.db.params.driver_options.1002 = "SET NAMES utf8"
+
+; Modules
+resources.modules[] =
+resources.frontController.moduleDirectory = APPLICATION_PATH "/modules"
+
+; Init View
+resources.view[] =
+
+[staging : production]
+
+[testing : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+
+[development : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+resources.frontController.params.displayExceptions = 1

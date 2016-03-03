@@ -1,0 +1,31 @@
+<?php
+$this->pageTitle = 'Manage News';
+$this->headTitle($this->pageTitle);
+?>
+
+<nav>
+<ul class="course_options">
+	<li><a href="<?php echo $this->url(array('module' => 'admin','controller'=>'news','action'=>'add'), null, TRUE) ?>" class="last">Add News</a></li>
+</ul>
+</nav>
+
+<p><strong>Only the 4 most recent new articles will be displayed on the website!</strong></p>
+
+<table class="standardtable">
+	<thead>
+		<tr>
+        	<th>Date</th>
+			<th>Title</th>
+            <th>Subtitle</th>
+		</tr>
+	</thead>
+	<tbody>
+    	<?php foreach($this->news as $news): ?>
+        <tr>
+        	<td><?php echo date('j F Y \- H:i:s', $news->Timestamp) ?></td>
+            <td><a href="<?php echo $this->url(array('module' => 'admin','controller'=>'news','action'=>'view','id'=>$news->Id), null, TRUE) ?>"><?php echo $news->Title ?></a></td>
+            <td><?php echo $news->Subtitle ?></td>
+        </tr>
+        <?php endforeach; ?>
+	</tbody>
+</table>

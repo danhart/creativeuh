@@ -1,0 +1,102 @@
+<?php
+echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<?php echo $this->headMeta() ?> 
+    <?php echo $this->headTitle('Creative Innovation & Training') ?> 
+    <?php echo $this->headLink()->prependStylesheet('/css/iehacks.css', 'screen', 'lt IE 9')
+                                ->prependStylesheet('/css/styles.css')
+                                ->prependStylesheet('/css/reset.css') ?> 
+    <?php echo $this->headScript()->prependFile('/js/jquery.color.min.js')
+                                  ->prependFile('/js/jquery-1.6.2.min.js')
+								  ->prependFile('http://html5shim.googlecode.com/svn/trunk/html5.js', 'text/javascript', array('conditional' => 'lt IE 9'))
+								  ->prependFile('/js/iepngfix_tilebg.js', 'text/javascript', array('conditional' => 'lt IE 7'))
+                                  ->appendFile('/js/core.js') ?>
+</head>
+<body class="<?php echo $this->bodyClass() ?>">
+
+<header id="header" style="background-color: #<?php echo $this->headerBgColor ?>">
+  <div id="top_bar">
+	  <section id="headings_and_search">
+          <hgroup>
+            <h1 id="uh_logo"><a href="/"><img src="/images/uh_logo.png" alt="University of Hertfordshire" /></a></h1>
+            <h2 id="site_title"><a href="/">CREATIVE INNOVATION &amp; TRAINING</a></h2>
+            <h3 id="department">SCHOOL OF CREATIVE ARTS</h3>
+          </hgroup>
+          <form id="site_search" method="post" action="<?php echo $this->url(array('controller'=>'course','action'=>'search'), 'default', TRUE) ?>">
+            <input type="text" id="searchtext" name="q" autocomplete="off" />
+          </form>
+      </section>
+      <nav id="nav">
+        <?php echo $this->navigation()->menu() ?>
+      </nav>
+  </div>
+  <?php if (count($this->slideShow)): ?>
+  	<section id="slideshow">
+    	<ul>
+        	<?php foreach($this->slideShow as $slide): ?>
+        		<li><a href="<?php echo $slide->Href ?>"><img src="/uploads/<?php echo $slide->FileName ?>" alt="#<?php echo $slide->ColorCode ?>" /></a></li>
+            <?php endforeach; ?>
+        </ul>
+    </section>
+  <?php endif; ?>
+</header>
+
+<div id="main" <?php if (count($this->slideShow)): ?>class="top_shadow"<?php endif; ?>>
+
+	<?php if ( $this->layout()->showBreadcrumbs ): ?>
+        <section id="breadcrumbs">
+          <?php echo $this->navigation()->breadcrumbs()->setLinkLast(false)->setRenderInvisible(true)->setMinDepth(0)->setSeparator(' / ')->render(); ?>
+        </section>
+    <?php endif; ?>
+
+	<section id="content">
+    	<h1><?php echo $this->escape($this->pageTitle) ?></h1>
+        <?php echo $this->layout()->content ?>
+    </section>
+</div>
+
+<footer id="footer">
+	<nav id="footer_links">
+    	<div id="fl_cola" class="column first">
+        	<h3>About Us</h3>
+            <ul>
+            	<li><a href="<?php echo $this->url(array('controller'=>'index','action'=>'about-us'), 'default', TRUE) ?>">Creative Innovation &amp; Training</a></li>
+            </ul>
+        </div>
+        <div id="fl_colb" class="column">
+        	<h3>Contact Us</h3>
+            <ul>
+            	<li><a href="mailto:c.l.hamilton@herts.ac.uk">Business Enquiries</a></li>
+                <li><a href="mailto:n.thomas9@herts.ac.uk">Short Course &amp; Training Enquiries</a></li>
+                <li><a href="mailto:c.l.hamilton@herts.ac.uk">Creative Services Enquiries</a></li>
+                <li><a href="mailto:p.bryan@herts.ac.uk">Art Services Enquiries</a></li>
+            </ul>
+        </div>
+        <div id="fl_colc" class="column">
+        	<h3>Social Links</h3>
+            <ul>
+            	<li><a href="http://www.facebook.com/pages/The-University-of-Hertfordshire-School-of-Creative-Arts/129700787081845" target="_blank">Facebook</a></li>
+                <li><a href="http://www.twitter.com/uhcreatives" target="_blank">Twitter</a></li>
+                <li><a href="http://www.linkedin.com/groups/University-Hertfordshire-Creative-Network-4059939?trk=myg_ugrp_ovr" target="_blank">LinkedIn</a></li>
+            </ul>
+        </div>
+        <div id="fl_cold" class="column last">
+        	<h3>Legal Info</h3>
+            <ul>
+            	<li><a href="<?php echo $this->url(array('controller'=>'index','action'=>'privacy-policy'), 'default', TRUE) ?>">Privacy Policy</a></li>
+            </ul>
+        </div>
+	</nav>
+    
+    <div id="colophon">
+        <hr class="hr_80" />
+        <p class="centered"><img src="/images/colophon_logos.png" alt="Apple - Authorised Training Centre"/></p>
+        <p class="centered">&copy; 2011 Creative Innovation &amp; Training - University of Hertfordshire</p>
+    </div>
+    
+</footer>
+
+
+</body>
+</html>

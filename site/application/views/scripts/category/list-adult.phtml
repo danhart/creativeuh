@@ -1,0 +1,18 @@
+<?php
+	$this->pageTitle = 'Short Courses & Training';
+	$this->headTitle($this->pageTitle);
+?>
+
+<!-- Should use a partial for this article box so that it is reusable -->
+<?php foreach($this->adultCategories as $category): ?>
+	<article class="article_box <?php echo $this->cycle(array('one', 'two', 'three', 'four'))->next() ?>">
+    	<header>
+        	<a href="<?php echo $this->url(array('controller'=>'category','action'=>'view','urlkey'=>$category->URLKey), 'adult_category_view', TRUE) ?>"><?php echo $this->Image($category->URLKey, '/uploads/'. $category->Image, array('alt' => $this->escape($category->Name)), '200x200') ?></a>
+        	<h2><a href="<?php echo $this->url(array('controller'=>'category','action'=>'view','urlkey'=>$category->URLKey), 'adult_category_view', TRUE) ?>"><?php echo $this->escape($category->Name) ?></a></h2>
+        </header>
+        <div class="article_content"><?php echo $this->escape($category->Description) ?></div>
+        <footer>
+        	<a href="<?php echo $this->url(array('controller'=>'category','action'=>'view','urlkey'=>$category->URLKey), 'adult_category_view', TRUE) ?>" class="more">more</a>
+        </footer>
+    </article>
+<?php endforeach; ?>

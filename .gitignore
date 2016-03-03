@@ -1,0 +1,4 @@
+.DS_Store
+.vagrant
+site/library/Zend
+/site/application/configs/application.ini

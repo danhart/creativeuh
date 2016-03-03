@@ -1,0 +1,50 @@
+<?php
+$this->pageTitle = 'News - ' . $this->news->Title;
+$this->headTitle($this->news->Title);
+?>
+
+<nav>
+<ul class="course_options">
+	<li><a href="<?php echo $this->url(array('module' => 'admin','controller'=>'news','action'=>'edit','id'=>$this->news->Id), null, TRUE) ?>">Edit Article</a></li>
+	<li><a class="last" href="<?php echo $this->url(array('module' => 'admin','controller'=>'news','action'=>'delete','id'=>$this->news->Id), null, TRUE) ?>">Delete Article</a></li>
+</ul>
+</nav>
+
+<table class="standardtable">
+	<thead>
+		<tr>
+			<th>Field</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+            <td>Title</td>
+            <td><?php echo $this->escape($this->news->Title) ?></td>
+        </tr>
+        <tr>
+        	<td>Timestamp</td>
+            <td><?php echo date('j F Y \- H:i:s', $this->news->Timestamp) ?></td>
+        </tr>
+		<tr>
+			<td>ID</td>
+			<td><?php echo $this->news->Id ?></td>
+		</tr>
+        <tr>
+            <td>URL Key</td>
+            <td><?php echo $this->news->URLKey ?></td>
+        </tr>
+		<tr>
+			<td>Subtitle</td>
+			<td><?php echo $this->escape($this->news->Subtitle) ?></td>
+		</tr>
+		<tr>
+			<td>News Image (not to size)</td>
+			<td><?php echo $this->Image('News Image', '/uploads/'. $this->news->Image, array('alt' => 'News Image'), '150x150') ?></td>
+		</tr>
+		<tr>
+			<td>Article Content</td>
+			<td><?php echo $this->paragraphText($this->news->Content) ?></td>
+		</tr>
+	</tbody>
+</table>

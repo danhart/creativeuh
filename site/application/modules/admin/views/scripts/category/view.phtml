@@ -1,0 +1,54 @@
+<?php
+$this->pageTitle = 'Category - ' . $this->category->Name;
+$this->headTitle($this->category->Name);
+?>
+
+<nav>
+<ul class="course_options">
+	<li><a href="<?php echo $this->url(array('module' => 'admin','controller'=>'category','action'=>'edit','id'=>$this->category->Id), null, TRUE) ?>">Edit Category</a></li>
+	<li><a class="last" href="<?php echo $this->url(array('module' => 'admin','controller'=>'category','action'=>'delete','id'=>$this->category->Id), null, TRUE) ?>">Delete Category</a></li>
+</ul>
+</nav>
+
+<table class="standardtable">
+	<thead>
+		<tr>
+			<th>Field</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+        	<td>Name</td>
+            <td><?php echo $this->escape($this->category->Name) ?></td>
+        </tr>
+        <tr>
+        	<td>Image</td>
+            <td><?php echo $this->Image('Category Image', '/uploads/'. $this->category->Image, array('alt' => 'Category Image'), '150x150') ?></td>
+        </tr>
+        <tr>
+        	<td>Description</td>
+            <td><?php echo $this->escape($this->category->Description) ?></td>
+        </tr>
+		<tr>
+			<td>ID</td>
+			<td><?php echo $this->category->Id ?></td>
+		</tr>
+        <tr>
+            <td>For Adults</td>
+            <td><?php echo $this->forAdults ?></td>
+        </tr>
+        <tr>
+            <td>URL Key</td>
+            <td><?php echo $this->category->URLKey ?></td>
+        </tr>
+		<tr>
+			<td>Meta Keywords</td>
+			<td><?php echo $this->escape($this->category->MetaKeywords) ?></td>
+		</tr>
+		<tr>
+            <td>Meta Description</td>
+            <td><?php echo $this->escape($this->category->MetaDescription) ?></td>
+        </tr>
+	</tbody>
+</table>

@@ -1,0 +1,502 @@
+* html img, * html div {
+	behavior: url(iepngfix.htc);
+}
+
+body {
+	margin-top: 20px;
+	color: #8a8989;
+	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	background-color: #FFFFFF;
+}
+
+.cleardiv {
+	clear: both;
+	margin: -1px;
+	height: 1px;
+	overflow: hidden;
+	font-size: 0;
+	line-height: 0;
+} 
+
+p {
+	margin-bottom: 20px;
+}
+
+p:last-child {
+  margin-bottom: 0px;
+}
+
+p.last {
+  margin-bottom: 0px;
+}
+
+a {
+	color: #4486c8;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #003366;
+	text-decoration: none;
+}
+
+a:active, a:focus, button:active, button:focus {
+	outline: none;
+	-moz-outline-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #8a8989;
+}
+
+h1 {
+	font-size: 1.3em;
+	font-weight: normal;
+	line-height: 1.4;
+	margin-bottom: 0.3em;
+}
+
+h2 {
+	font-size: 1.1em;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-bottom: 0.3em;
+}
+
+h3 {
+	font-size:1.3em;
+	font-weight: normal;
+	line-height: 1.4;
+	margin-bottom: 0.3em;
+}
+
+h4 {
+	font-size: 1em;
+	line-height: 1.5;
+}
+
+h5 {
+}
+
+h6 {
+}
+
+hr {
+	border: 0;
+	margin: 0px 0px 20px 0px;
+	color: #d5d5d6;
+	background-color: #d5d5d6;
+	height: 1px;
+	width: 100%;
+	text-align: left;
+}
+
+table {
+	width: 100%;
+	color: #8a8989;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background-color: #dce8ef;
+	border: 1px solid #cecece;
+}
+
+th {
+	color: #666666;
+}
+
+td {
+	border: 1px solid #cecece;
+}
+
+.standardtable {
+	margin-bottom: 20px;
+}
+
+.standardtable td {
+	padding: 3px 10px;
+	background-color: #FFF;
+	vertical-align: top;
+}
+
+.standardtable tr td:first-child {
+	/* font-weight: bold; */
+	/* font-style: italic; */
+}
+
+.standardtable th {
+	padding: 3px 10px;
+	text-align: left;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    border: none;
+}
+
+#wrapper {
+	margin: auto auto;
+	/* overflow: hidden; */
+	width: 960px;
+	margin-bottom: 25px;
+}
+
+#content {
+}
+
+.standardform input, .standardform textarea {
+	color: #8a8989;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background-color: #dce8ef;
+	border: 1px solid #cecece;
+	padding: 5px;
+}
+
+.standardform input:hover, .standardform textarea:hover {
+	border: 1px solid #b7b7b7;
+	background-color: #e3eff7;
+}
+
+.standardform input:focus, .standardform textarea:focus {
+	border: 1px solid #b7b7b7;
+	background-color: #edf3f7;
+}
+
+.standardform label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.standardform button {
+	margin: 0;
+	padding: 0;
+	background-color:transparent;
+	border:0 none;
+	display: block;
+	height: 32px;
+	outline-style: none;
+	outline-width: medium;
+	position: relative;
+	text-indent: -9999em;
+}
+
+.standardform button:hover {
+	background-position: 0 -32px;
+}
+
+.standardform#loginform textarea {
+	resize: none;
+	height: 80px;
+	width: 273px;
+}
+
+.standardform#loginform button {
+	background-image:url(../images/sendbutton.png);
+	width: 92px;
+  float: left;
+}
+
+.standardform#loginform {
+	margin-bottom: 10px;
+}
+
+.standardform#addsite textarea {
+	resize: none;
+	height: 80px;
+	width: 273px;
+}
+
+.standardform#addsite button {
+	background-image:url(../images/sendbutton.png);
+	width: 92px;
+  float: left;
+}
+
+.standardform#addsite {
+	margin-bottom: 10px;
+}
+
+.standardform#logintosite textarea {
+	resize: none;
+	height: 80px;
+	width: 273px;
+}
+
+.standardform#logintosite button {
+	background-image:url(images/adminloginbut.png);
+	width: 171px;
+  float: left;
+}
+
+.standardform#logintosite {
+	margin-bottom: 10px;
+}
+
+.standardform#changepassword textarea {
+	resize: none;
+	height: 80px;
+	width: 273px;
+}
+
+.standardform#changepassword button {
+	background-image:url(images/changepassbut.png);
+	width: 171px;
+  float: left;
+	margin-left: 10px;
+}
+
+.standardform#changepassword input {
+  float: left;
+}
+
+.standardform#changepassword {
+	margin-bottom: 10px;
+}
+
+.standardform#unpublishsite textarea {
+	resize: none;
+	height: 80px;
+	width: 273px;
+}
+
+.standardform#unpublishsite button {
+	background-image:url(images/unpublishbut.png);
+	width: 171px;
+  float: left;
+}
+
+.standardform#unpublishsite {
+	margin-bottom: 10px;
+}
+
+.standardform#deletesite textarea {
+	resize: none;
+	height: 80px;
+	width: 273px;
+}
+
+.standardform#deletesite button {
+	background-image:url(images/deletesitebut.png);
+	width: 171px;
+  float: left;
+}
+
+.standardform#deletesite {
+	margin-bottom: 10px;
+}
+
+.standardform#googleapps button {
+	background-image:url(images/submitcodebut.png);
+	width: 171px;
+  float: left;
+}
+
+.standardform#googleapps {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+ul.form-errors {
+  color: #000000;
+  padding: 5px;
+  background-color: #f5f5f5;
+  border: 1px solid red;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+ul.form-errors b {
+	float: left;
+	clear: left;
+}
+
+nav ul {
+	float: right;
+}
+
+nav ul li {
+	display: inline;
+	float: left;
+}
+
+nav ul li a {
+	display: block;
+	border-right: 1px solid #CCC;
+	padding: 0 5px 0 5px;
+}
+
+nav ul li a.last {
+	padding: 0 0 0 5px;
+	border: none;
+}
+
+nav ul.course_options {
+	float: none;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+header h1 {
+	margin-bottom: 0;
+	float: left;
+}
+
+header {
+	border-bottom: 1px solid #CCCCCC;
+	overflow: auto;
+	margin-bottom: 20px;
+}
+
+.deletebutton {
+	background-image: url('/images/deletebutton.png');
+	height: 25px;
+	width: 24px;
+	overflow: hidden;
+	text-indent: -9999em;
+	display: block;
+	position: relative;
+	left: 2px;
+	float: left;
+}
+
+.editbutton {
+	background-image: url('/images/editbutton.png');
+	height: 25px;
+	width: 24px;
+	overflow: hidden;
+	text-indent: -9999em;
+	display: block;
+	position: relative;
+	left: 2px;
+	float: left;
+}
+
+ul.slides li {
+	min-height: 59px;
+	padding: 0px;
+	margin: 5px;
+	float: left;
+	clear: both;
+	position: relative;
+}
+
+ul.slides li img {
+	display: block;
+}
+
+ul.slides li a {
+	position: absolute;
+	right: -90px;
+	top: 25px;
+}
+
+.datatable tr {
+	cursor: pointer;
+}
+
+.datatable tr td.domain_name {
+	color: #222222;
+}
+
+.datatable tbody tr.even:hover, .datatable tbody tr.even td.highlighted {
+	background-color: #ccffeb;
+}
+ 
+.datatable tbody tr.odd:hover, .datatable tbody tr.odd td.highlighted {
+	background-color: #ccffeb;
+}
+ 
+.datatable tr.even:hover {
+	background-color: #ccffeb;
+}
+ 
+.datatable tr.even:hover td.sorting_1 {
+	background-color: #ccffeb;
+}
+ 
+.datatable tr.even:hover td.sorting_2 {
+	background-color: #ccffeb;
+}
+ 
+.datatable tr.even:hover td.sorting_3 {
+	background-color: #ccffeb;
+}
+ 
+.datatable tr.odd:hover {
+	background-color: #ccffeb;
+}
+ 
+.datatable tr.odd:hover td.sorting_1 {
+	background-color: #ccffeb;
+}
+ 
+.datatable tr.odd:hover td.sorting_2 {
+	background-color: #ccffeb;
+}
+ 
+.datatable tr.odd:hover td.sorting_3 {
+	background-color: #ccffeb;
+}
+
+
+
+
+.datatable tbody tr.even, .datatable tbody tr.even td.highlighted {
+	background-color: white;
+}
+ 
+.datatable tbody tr.odd, .datatable tbody tr.odd td.highlighted {
+	background-color: #e2f0ff;
+}
+ 
+.datatable tr.even {
+	background-color: white;
+}
+ 
+.datatable tr.even td.sorting_1 {
+	background-color: #eaf4ff;
+}
+ 
+.datatable tr.odd {
+	background-color: #e2f0ff;
+}
+ 
+.datatable tr.odd td.sorting_1 {
+	background-color: #d3e9ff;
+}
+
+dl.zend_form dd {
+	margin-bottom: 10px;
+	overflow: hidden;
+	float: left;
+}
+
+dl.zend_form dt {
+	clear: both;
+    float: left;
+    width: 140px;
+	margin-bottom: 10px;
+}
+
+dl.zend_form ul.errors {
+	color: #F00;
+	float: left;
+	margin-left: 10px;
+}
+
+dl.zend_form input, dl.zend_form textarea {
+	float: left;
+}
+
+dl.zend_form textarea {
+	height: 135px;
+    width: 434px;
+}

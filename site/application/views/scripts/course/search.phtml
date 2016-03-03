@@ -1,0 +1,32 @@
+<?php 
+	$this->pageTitle = 'Search Results for: ' . $this->query;
+	$this->headTitle($this->pageTitle);
+?>
+
+<?php if(empty($this->query)): ?>
+	<p class="centered">Please enter a search term</p>
+<?php else: ?>
+
+	<?php if(empty($this->results)): ?>
+    	<p class="centered">Sorry no results match your search</p>
+    <?php else: ?>
+    	<?php foreach($this->results as $course): ?>
+            <div id="primary" class="no_margin">
+            
+                <article class="article_box_alt">
+                    <a href="<?php echo $this->url(array('controller'=>'course','action'=>'view','urlkey'=>$course->URLKey), 'course_view', TRUE) ?>"><?php echo $this->Image($course->URLKey, '/uploads/'. $course->Image, array('alt' => $this->escape($course->Title)), '200x200') ?></a>
+                    <header>
+                        <h2><a href="<?php echo $this->url(array('controller'=>'course','action'=>'view','urlkey'=>$course->URLKey), 'course_view', TRUE) ?>"><?php echo $this->escape($course->Title) ?></a></h2>
+                    </header>
+                    <div class="article_content"><?php echo $this->escape($course->Subtitle) ?></div>
+                    
+                    <footer>
+                        <a href="<?php echo $this->url(array('controller'=>'course','action'=>'view','urlkey'=>$course->URLKey), 'course_view', TRUE) ?>" class="more">more</a>
+                    </footer>
+                </article>
+                
+            </div>
+        <?php endforeach; ?>
+	<?php endif; ?>
+    
+<?php endif; ?>

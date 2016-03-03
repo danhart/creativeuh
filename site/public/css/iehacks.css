@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'LatoBold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('http://themes.googleusercontent.com/static/fonts/lato/v3/sBtfDPlEIwvKKU53nAG7AQ.eot');
+  src: local('Lato Bold'), local('Lato-Bold'), url('http://themes.googleusercontent.com/static/fonts/lato/v3/wkfQbvfT_02e2IWO3yYueQ.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'LatoLight';
+  font-style: normal;
+  font-weight: normal;
+  src: url('http://themes.googleusercontent.com/static/fonts/lato/v3/zLhfkPOm_5ykmdm-wXaiuw.eot');
+  src: local('Lato Light'), local('Lato-Light'), url('http://themes.googleusercontent.com/static/fonts/lato/v3/KT3KS9Aol4WfR6Vas8kNcg.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'LatoBlack';
+  font-style: normal;
+  font-weight: normal;
+  src: url('http://themes.googleusercontent.com/static/fonts/lato/v3/BjDVcwQGWPX2RAidnkd0Bw.eot');
+  src: local('Lato Black'), local('Lato-Black'), url('http://themes.googleusercontent.com/static/fonts/lato/v3/BVtM30trf7q_jfqYeHfjtA.woff') format('woff');
+}
+
+nav#nav ul li {
+	position: relative;
+	z-index: 5000;
+}
+
+nav#nav ul li ul {
+	z-index: 2000;
+}
+
+/* IE<6 Hacks.. Why bother? */
+* html img, * html form {
+        behavior: url(/css/iepngfix.htc);
+}
+
+* html #top_bar {
+	background: none;
+	border-bottom: 1px solid #CCC;
+}
+
+/*
+hr {
+	display:list-item;
+	filter:alpha(opacity=0);
+	width:0;
+	margin-top:-10px;
+}
+
+hr.hr_100 {
+	list-style:url(/images/hr_100.png) inside;
+}
+
+hr.hr_80 {
+	list-style:url(/images/hr_80.png) inside;
+}*/
+
+h4, strong, .study_option table th {
+	font-family: 'LatoBold';
+	font-weight: normal;
+}
+
+.sidebar_box h3 {
+	font-family: 'LatoLight';
+	font-weight: normal;
+}
+
+#site_search {
+    background-image: url('/images/top_bar_bg.png');
+    border: 1px solid #FFF;
+}

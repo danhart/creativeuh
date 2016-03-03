@@ -1,0 +1,14 @@
+<?php
+$this->pageTitle = 'Slideshow Delete - ' . $this->slideshow->PageLabel;
+$this->headTitle($this->pageTitle);
+?>
+
+<p>Are you sure that you want to delete <strong><?php echo $this->slideshow->PageLabel ?></strong>?</p>
+
+<form action="<?php echo $this->url(array('module'=>'admin', 'controller'=>'slideshow', 'action'=>'delete')); ?>" method="post">
+<div>
+<input type="hidden" name="id" value="<?php echo $this->slideshow->Id; ?>" />
+<input type="submit" name="del" value="Yes" />
+<input type="submit" name="del" value="No" />
+</div>
+</form>

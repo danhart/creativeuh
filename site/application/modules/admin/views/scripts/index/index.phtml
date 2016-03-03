@@ -1,0 +1,56 @@
+<?php 
+$this->pageTitle = 'Home';
+$this->headTitle($this->pageTitle);
+?>
+
+<h2>Courses</h2>
+<table cellpadding="0" cellspacing="0" border="0" class="datatable display" id="courses">
+
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Title</th>
+			<th>Subtitle</th>
+			<th>Category</th>
+		</tr>
+	</thead>
+
+	<tbody>
+
+	<?php foreach ($this->courses as $course): ?>
+		<tr url="<?php echo $this->url(array('module' => 'admin','controller'=>'course','action'=>'view','id'=>$course->Id), null, TRUE) ?>">
+			<td><?php echo $this->escape($course->Id) ?></td>
+			<td><?php echo $this->escape($course->Title) ?></td>
+			<td><?php echo $this->escape($course->Subtitle) ?></td>
+                        <td><?php echo $this->escape($course->CategoryName) ?></td>
+		</tr>
+	<?php endforeach ?>
+
+	</tbody>
+
+</table>
+
+<h2>Categories</h2>
+<table cellpadding="0" cellspacing="0" border="0" class="datatable display" id="categories">
+
+        <thead>
+                <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Total Courses</th>
+                </tr>
+        </thead>
+
+        <tbody>
+
+        <?php foreach ($this->categories as $category): ?>
+                <tr url="<?php echo $this->url(array('module' => 'admin','controller'=>'category','action'=>'view','id'=>$category->Id), null, TRUE) ?>">
+                        <td><?php echo $this->escape($category->Id) ?></td>
+                        <td><?php echo $this->escape($category->Name) ?></td>
+                        <td><?php echo $this->escape($category->TotalCourses) ?></td>
+                </tr>
+        <?php endforeach ?>
+
+        </tbody>
+
+</table>

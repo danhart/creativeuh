@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+	<nav>
+
+		<home>
+            <label>Home</label>
+			<controller>index</controller>
+			<action>index</action>
+			<route>default</route>
+        </home>
+
+		<shortcourses>
+			<label>Short Courses &amp; Training</label>
+			<controller>category</controller>
+			<action>list-adult</action>
+			<route>short_courses_and_training</route>
+		</shortcourses>
+		
+		<youngpeople>
+			<label>Young People</label>
+			<controller>category</controller>
+			<action>view-not-adult</action>
+			<route>young_people</route>
+		</youngpeople>
+		
+		<creativeservices>
+			<label>Creative Services</label>
+			<uri>#</uri>
+			<pages>
+				<graphicdesign>
+					<label>Graphic Design</label>
+					<controller>creative-services</controller>
+					<action>graphic-design</action>
+					<route>default</route>
+				</graphicdesign>
+				<filming>
+					<label>Filming</label>
+					<controller>creative-services</controller>
+					<action>filming</action>
+					<route>default</route>
+				</filming>
+				<photography>
+					<label>Photography</label>
+					<controller>creative-services</controller>
+					<action>photography</action>
+					<route>default</route>
+				</photography>
+				<animationvfx>
+					<label>Animation &amp; VFX</label>
+					<controller>creative-services</controller>
+					<action>animation-vfx</action>
+					<route>default</route>
+				</animationvfx>
+				<modelmaking>
+					<label>Model Making</label>
+					<controller>creative-services</controller>
+					<action>model-making</action>
+					<route>default</route>
+				</modelmaking>
+				<interactivemedia>
+					<label>Interactive Media</label>
+					<controller>creative-services</controller>
+					<action>interactive-media</action>
+					<route>default</route>
+				</interactivemedia>
+				<fashion>
+					<label>Fashion</label>
+					<controller>creative-services</controller>
+					<action>fashion</action>
+					<route>default</route>
+				</fashion>
+				<productdesign>
+					<label>Product Design</label>
+					<controller>creative-services</controller>
+					<action>product-design</action>
+					<route>default</route>
+				</productdesign>
+				<musicaudio>
+					<label>Music &amp; Audio</label>
+					<controller>creative-services</controller>
+					<action>music-audio</action>
+					<route>default</route>
+				</musicaudio>
+				<interiorarchitecture>
+					<label>Interior Architecture &amp; Design</label>
+					<controller>creative-services</controller>
+					<action>interior-architecture</action>
+					<route>default</route>
+				</interiorarchitecture>
+			</pages>
+		</creativeservices>
+		
+		<bespokeservices>
+			<label>Bespoke Services</label>
+			<controller>bespoke-services</controller>
+			<action>index</action>
+			<route>default</route>
+		</bespokeservices>
+		
+		<artservices>
+			<label>Art Services</label>
+			<controller>art-services</controller>
+			<action>index</action>
+			<route>default</route>
+		</artservices>
+		
+		<facilitieshire>
+			<label>Facilities Hire</label>
+			<controller>facilities-hire</controller>
+			<action>index</action>
+			<route>default</route>
+			<class>last</class>
+		</facilitieshire>
+		
+		<search>
+			<label>Search Results</label>
+			<controller>course</controller>
+			<action>search</action>
+			<visible>0</visible>
+		</search>
+		
+		<news>
+			<label>Latest News</label>
+			<controller>index</controller>
+			<action>index</action>
+			<visible>0</visible>
+		</news>
+
+	</nav>
+</configdata>
+

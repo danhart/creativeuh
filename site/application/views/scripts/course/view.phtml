@@ -1,0 +1,63 @@
+<div id="primary">
+	<article>
+        <h2>Aims of the course</h2>
+        <?php echo $this->paragraphText($this->course->Aims) ?>
+        <h2 class="top_space">Who is it for?</h2>
+        <?php echo $this->paragraphText($this->course->TargetAudience) ?>
+        <h2 class="top_space">What does the course cover?</h2>
+        <?php echo $this->paragraphText($this->course->Brief) ?>
+    </article>
+</div>
+<div id="secondary">
+	<aside class="sidebar_box">
+    	<h3>Study Options</h3>
+        <?php foreach($this->studyoptions as $studyoption): ?>
+        <div class="study_option">
+        	<h4>Sem <?php echo $studyoption->Semester ?> <?php echo $studyoption->Days ?> <?php echo $studyoption->Times ?></h4>
+            <img src="/images/more_triangle.png" alt="more" class="study_triangle_closed" />
+            <img src="/images/more_triangle_down.png" alt="less" class="study_triangle_open" />
+            <table>
+            	<tbody>
+                	<tr>
+                    	<th>Days:</th>
+                        <td><?php echo $studyoption->Days ?></td>
+                    </tr>
+                    <tr>
+                    	<th>Dates:</th>
+                        <td><?php echo $studyoption->Dates ?></td>
+                    </tr>
+                    <tr>
+                    	<th>Times:</th>
+                        <td><?php echo $studyoption->Times ?></td>
+                    </tr>
+                    <tr>
+                    	<th>Duration:</th>
+                        <td><?php echo $studyoption->Duration ?></td>
+                    </tr>
+                    <tr>
+                    	<th>Fee:</th>
+                        <td>&pound;<?php echo $studyoption->Fee ?></td>
+                    </tr>
+                    <tr>
+                    	<th>Code:</th>
+                        <td><?php echo $studyoption->Code ?></td>
+                    </tr>
+                    <tr>
+                    	<th>Location:</th>
+                        <td><?php echo $studyoption->Location ?></td>
+                    </tr>
+                </tbody>
+            </table>
+            <a class="book_now" href="<?php echo $this->escape($this->course->BookingURL) ?>" target="_blank">book now<img src="/images/more_triangle.png" alt="more" class="more_triangle" /></a>
+        </div>
+        <?php endforeach; ?>
+    </aside>
+    <aside class="sidebar_box">
+    	<h3>Related Courses</h3>
+        <ul id="related_courses">
+			<?php foreach($this->relatedcourses as $relatedcourse): ?>
+            	<li><a href="<?php echo $this->url(array('controller'=>'course','action'=>'view','urlkey'=>$relatedcourse->RelatedCourseURLKey), null, TRUE) ?>" class="more">– <?php echo $this->escape($relatedcourse->RelatedCourseTitle) ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+    </aside>
+</div>

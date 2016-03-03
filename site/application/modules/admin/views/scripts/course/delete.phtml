@@ -1,0 +1,9 @@
+<p>Are you sure that you want to delete <strong><?php echo $this->course->Title ?></strong>?</p>
+
+<form action="<?php echo $this->url(array('module'=>'admin', 'controller'=>'course', 'action'=>'delete')); ?>" method="post">
+<div>
+<input type="hidden" name="id" value="<?php echo $this->course->Id; ?>" />
+<input type="submit" name="del" value="Yes" />
+<input type="submit" name="del" value="No" />
+</div>
+</form>

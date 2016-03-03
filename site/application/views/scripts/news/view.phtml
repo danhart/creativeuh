@@ -1,0 +1,9 @@
+<div id="primary">
+	<article>
+        <h2><?php echo $this->news->Subtitle ?></h2>
+        <?php echo $this->paragraphText($this->news->Content) ?>
+    </article>
+</div>
+<div id="secondary">
+	<aside><?php echo $this->Image($this->news->URLKey, '/uploads/'. $this->news->Image, array('alt' => $this->escape($this->news->Title)), '282x282') ?></aside>
+</div>

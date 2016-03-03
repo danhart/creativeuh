@@ -1,0 +1,12 @@
+<?php
+$this->pageTitle = 'Add Slideshow';
+$this->headTitle($this->pageTitle);
+
+$this->form->setAction($this->url());
+
+?>
+
+<p>Please obtaint the page title for this slideshow from your browsers top bar. E.g. Short Courses &amp; Training. Not SHORT COURSES &amp; TRAINING.</p>
+<p>Slideshows are recursive, which means if you create a slideshow for Short Courses &amp; Training: the <strong>first</strong> slide of this slideshow will set the colour for all pages within this section. E.g. Visual Arts and all courses within Visual Arts</p>
+
+<?php echo $this->form; ?>

@@ -1,0 +1,24 @@
+<?php
+$this->pageTitle = 'Slideshow - ' . $this->slideshow->PageLabel;
+$this->headTitle($this->pageTitle);
+?>
+
+<nav>
+<ul class="course_options">
+	<li><a href="<?php echo $this->url(array('module' => 'admin','controller'=>'slideshow','action'=>'add-slide','id'=>$this->slideshow->Id), null, TRUE) ?>">Add Slide</a></li>
+	<li><a href="<?php echo $this->url(array('module' => 'admin','controller'=>'slideshow','action'=>'delete','id'=>$this->slideshow->Id), null, TRUE) ?>" class="last">Delete Slideshow</a></li>
+</ul>
+</nav>
+
+<ul class="slides">
+	<?php foreach($this->slides as $slide): ?>
+    	<li id="slide_<?php echo $slide->Id ?>" style="background-color: #<?php echo $slide->ColorCode ?>">
+        	<?php if ($slide->FileName): ?>
+    			<?php echo $this->Image($slide->FileName, '/uploads/'. $slide->FileName, array('alt' => 'Slide'), '*x60') ?>
+            <?php else: ?>
+            	<div style="width: 294px;"></div>
+            <?php endif; ?>
+            <a href="<?php echo $this->url(array('module' => 'admin','controller'=>'slideshow','action'=>'delete-slide','id'=>$this->slideshow->Id,'slideid'=>$slide->Id), null, TRUE) ?>">Delete Slide</a>
+        </li>
+    <?php endforeach; ?>
+</ul>

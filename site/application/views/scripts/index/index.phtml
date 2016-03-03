@@ -1,0 +1,108 @@
+<!-- Should use a partial for this article box so that it is reusable -->
+
+<?php foreach ($this->news as $count => $news): ?>
+	<?php if ($count + 1 > 4) break; // Only get the first 4 news items ?>
+	<article class="article_box <?php echo $this->cycle(array('one', 'two', 'three', 'four'))->next() ?>">
+    	<header>
+        	<a href="<?php echo $this->url(array('controller'=>'news','action'=>'view','urlkey'=>$news->URLKey), 'news_view', TRUE) ?>"><?php echo $this->Image($news->URLKey, '/uploads/'. $news->Image, array('alt' => $this->escape($news->Title)), '200x200') ?></a>
+        	<h2><a href="<?php echo $this->url(array('controller'=>'news','action'=>'view','urlkey'=>$news->URLKey), 'news_view', TRUE) ?>"><?php echo $this->escape($news->Title) ?></a></h2>
+        </header>
+        <div class="article_content"><?php echo $this->escape($news->Subtitle) ?></div>
+        <footer>
+        	<a href="<?php echo $this->url(array('controller'=>'news','action'=>'view','urlkey'=>$news->URLKey), 'news_view', TRUE) ?>" class="more">more</a>
+        </footer>
+    </article>
+<?php endforeach; ?>
+
+
+
+<hr class="hr_100" />
+
+<h1>What We Do</h1>
+
+<article class="article_box one">
+    <header>
+        <a href="<?php echo $this->url(array('controller' => 'category', 'action' => 'list-adult'), 'short_courses_and_training', TRUE) ?>"><img width="200" height="200" alt="Short Courses" src="/images/sct.png"></a>
+        <h2><a href="<?php echo $this->url(array('controller' => 'category', 'action' => 'list-adult'), 'short_courses_and_training', TRUE) ?>">Short Courses</a></h2>
+    </header>
+    <div class="article_content">We offer a range of flexible, creative courses designed to meet the needs of enthusiasts and practitioners</div>
+    <footer>
+        <a class="more" href="<?php echo $this->url(array('controller' => 'category', 'action' => 'list-adult'), 'short_courses_and_training', TRUE) ?>">more</a>
+    </footer>
+</article>
+
+<article class="article_box two">
+    <header>
+        <a href="<?php echo $this->url(array('controller' => 'creative-services', 'action' => 'index'), 'default', TRUE) ?>"><img width="200" height="200" alt="Creative Services" src="/images/creativeservcies.png"></a>
+        <h2><a href="<?php echo $this->url(array('controller' => 'creative-services', 'action' => 'index'), 'default', TRUE) ?>">Creative Services</a></h2>
+    </header>
+    <div class="article_content">From graphic design to film, photography to fashion we are the region's most innovative creative studio</div>
+    <footer>
+        <a class="more" href="<?php echo $this->url(array('controller' => 'creative-services', 'action' => 'index'), 'default', TRUE) ?>">more</a>
+    </footer>
+</article>
+
+<article class="article_box three">
+    <header>
+        <a href="<?php echo $this->url(array('controller' => 'facilities-hire', 'action' => 'index'), 'default', TRUE) ?>"><img width="200" height="200" alt="Facilities Hire" src="/images/facilities.png"></a>
+        <h2><a href="<?php echo $this->url(array('controller' => 'facilities-hire', 'action' => 'index'), 'default', TRUE) ?>">Facilities Hire</a></h2>
+    </header>
+    <div class="article_content">Our range of specialist facilities is second to none and includes HD film and tv, recording and photography studios</div>
+    <footer>
+        <a class="more" href="<?php echo $this->url(array('controller' => 'facilities-hire', 'action' => 'index'), 'default', TRUE) ?>">more</a>
+    </footer>
+</article>
+
+<article class="article_box four">
+    <header>
+        <a href="<?php echo $this->url(array('controller' => 'bespoke-services', 'action' => 'index'), 'default', TRUE) ?>"><img width="200" height="200" alt="Bespoke Training" src="/images/bespoketraining.png"></a>
+        <h2><a href="<?php echo $this->url(array('controller' => 'bespoke-services', 'action' => 'index'), 'default', TRUE) ?>">Bespoke Training</a></h2>
+    </header>
+    <div class="article_content">Our bespoke consultancy and training offer is tailored to meet your specific business needs</div>
+    <footer>
+        <a class="more" href="<?php echo $this->url(array('controller' => 'bespoke-services', 'action' => 'index'), 'default', TRUE) ?>">more</a>
+    </footer>
+</article>
+<article class="article_box one">
+    <header>
+        <a href="<?php echo $this->url(array('controller' => 'category', 'action' => 'view', 'urlkey' => 'build-your-own-ma'), 'adult_category_view', TRUE) ?>"><img width="200" height="200" alt="Build Your Own MA" src="/images/byoma.png"></a>
+        <h2><a href="<?php echo $this->url(array('controller' => 'category', 'action' => 'view', 'urlkey' => 'build-your-own-ma'), 'adult_category_view', TRUE) ?>">Build Your Own MA</a></h2>
+    </header>
+    <div class="article_content">As a Skillset Media Academy, we offer a range of modules leading to an MA in Professional Media Practice</div>
+    <footer>
+        <a class="more" href="<?php echo $this->url(array('controller' => 'category', 'action' => 'view', 'urlkey' => 'build-your-own-ma'), 'adult_category_view', TRUE) ?>">more</a>
+    </footer>
+</article>
+
+<article class="article_box two">
+    <header>
+        <a href="<?php echo $this->url(array('controller' => 'category', 'action' => 'view', 'urlkey' => 'kids-activities'), 'young_category_view', TRUE) ?>"><img width="200" height="200" alt="For Kids" src="/images/kids.png"></a>
+        <h2><a href="<?php echo $this->url(array('controller' => 'category', 'action' => 'view', 'urlkey' => 'kids-activities'), 'young_category_view', TRUE) ?>">For Kids</a></h2>
+    </header>
+    <div class="article_content">We offer a variety of fun and exciting creative courses for kids</div>
+    <footer>
+        <a class="more" href="<?php echo $this->url(array('controller' => 'category', 'action' => 'view', 'urlkey' => 'kids-activities'), 'young_category_view', TRUE) ?>">more</a>
+    </footer>
+</article>
+
+<article class="article_box three">
+    <header>
+        <a href="<?php echo $this->url(array('controller' => 'category', 'action' => 'view', 'urlkey' => 'teenagers-workshops'), 'young_category_view', TRUE) ?>"><img width="200" height="200" alt="For Teens" src="/images/teens.png"></a>
+        <h2><a href="<?php echo $this->url(array('controller' => 'category', 'action' => 'view', 'urlkey' => 'teenagers-workshops'), 'young_category_view', TRUE) ?>">For Teens</a></h2>
+    </header>
+    <div class="article_content">Get your teenager out of bed with our creative workshops. A great way to develop your portfolio</div>
+    <footer>
+        <a class="more" href="<?php echo $this->url(array('controller' => 'category', 'action' => 'view', 'urlkey' => 'teenagers-workshops'), 'young_category_view', TRUE) ?>">more</a>
+    </footer>
+</article>
+
+<article class="article_box four">
+    <header>
+        <a href="<?php echo $this->url(array('controller' => 'art-services', 'action' => 'index'), 'default', TRUE) ?>"><img width="200" height="200" alt="Art Services" src="/images/artservices.png"></a>
+        <h2><a href="<?php echo $this->url(array('controller' => 'art-services', 'action' => 'index'), 'default', TRUE) ?>">Art Services</a></h2>
+    </header>
+    <div class="article_content">Our art consultant has a wealth of experience working with private clients and businesses to provide artworks to suit their needs</div>
+    <footer>
+        <a class="more" href="<?php echo $this->url(array('controller' => 'art-services', 'action' => 'index'), 'default', TRUE) ?>">more</a>
+    </footer>
+</article>

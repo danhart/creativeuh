@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+	<nav>
+
+		<home>
+            <label>Home</label>
+			<module>admin</module>
+			<controller>index</controller>
+			<action>index</action>
+        </home>
+
+		<addcourse>
+			<label>Add Course</label>
+			<module>admin</module>
+			<controller>course</controller>
+			<action>add</action>
+			<!-- <route>course_add</route> -->
+			<!-- <order>1</order> -->
+		</addcourse>
+
+		<addcoursecategory>
+			<label>Add Course Category</label>
+			<module>admin</module>
+			<controller>category</controller>
+			<action>add</action>
+		</addcoursecategory>
+		
+		<manageslideshows>
+			<label>Manage Slideshows</label>
+			<module>admin</module>
+			<controller>slideshow</controller>
+			<action>list</action>
+		</manageslideshows>
+		
+		<managenews>
+			<label>Manage News</label>
+			<module>admin</module>
+			<controller>news</controller>
+			<action>list</action>
+			<class>last</class>
+		</managenews>
+
+	</nav>
+</configdata>

@@ -1,0 +1,25 @@
+<?php
+$this->pageTitle = 'Manage Slideshows';
+$this->headTitle($this->pageTitle);
+?>
+
+<nav>
+<ul class="course_options">
+	<li><a href="<?php echo $this->url(array('module' => 'admin','controller'=>'slideshow','action'=>'add'), null, TRUE) ?>" class="last">Add Slideshow</a></li>
+</ul>
+</nav>
+
+<table class="standardtable">
+	<thead>
+		<tr>
+			<th>Slideshow</th>
+		</tr>
+	</thead>
+	<tbody>
+    	<?php foreach($this->slideshows as $slideshow): ?>
+        <tr>
+            <td><a href="<?php echo $this->url(array('module' => 'admin','controller'=>'slideshow','action'=>'view','id'=>$slideshow->Id), null, TRUE) ?>"><?php echo $slideshow->PageLabel ?></a></td>
+        </tr>
+        <?php endforeach; ?>
+	</tbody>
+</table>
